@@ -4,13 +4,14 @@ import { updateDisplay } from './updateDisplay';
 import { createMatrix } from './createMatrix';
 
 let currentImageObject: ImageObject | null = null;
-let matrix = createMatrix();
+const matrix = createMatrix();
 
 // TODO: figure out how to run program once on startup...
 // Run the program on startup.
 // let tempImageObject = acquireTrackInfo();
 
-// npx ts-node main.ts
+// tsc --build
+// node dist/main.js
 
 // Run the program every 15 seconds
 //  checking for new versions of the image.

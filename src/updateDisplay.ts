@@ -20,7 +20,7 @@ export function updateDisplay(matrix: Board.Painter): boolean | void {
           points: { x: 0, y: 0, z: 1 },
           color: 0x800000,
           layer: 1,
-          imagePath: './images/cover.jpg',
+          imagePath: '../images/cover.jpg',
         },
       ],
       false
