@@ -1,7 +1,7 @@
-import { acquireTrackInfo as acquireTrackInfo, ImageObject } from './src/trackInfo';
-import { downloadImage } from './src/downloadImage';
-import { updateDisplay } from './src/updateDisplay';
-import { createMatrix } from './src/createMatrix';
+import { acquireTrackInfo as acquireTrackInfo, ImageObject } from './trackInfo';
+import { downloadImage } from './downloadImage';
+import { updateDisplay } from './updateDisplay';
+import { createMatrix } from './createMatrix';
 
 let currentImageObject: ImageObject | null = null;
 let matrix = createMatrix();

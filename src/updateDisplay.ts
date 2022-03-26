@@ -2,7 +2,7 @@ import * as Board from 'rpi-led-matrix-painter';
 import { mv } from 'shelljs';
 
 export function updateDisplay(matrix: Board.Painter): boolean | void {
-  mv('-f', 'images/cover_new.jpg', 'images/cover.jpg');
+  mv('-f', '../images/cover_new.jpg', '../images/cover.jpg');
 
   matrix.clear();
   matrix.getCanvas().addCanvasSection(

@@ -7,7 +7,7 @@ export async function downloadImage(imageUrl: string): Promise<void | boolean> {
     method: 'GET',
     responseType: 'stream',
   });
-  const writer = createWriteStream('images/cover_new.jpg');
+  const writer = createWriteStream('../images/cover_new.jpg');
 
   response.data.pipe(writer);
 
