@@ -22,12 +22,13 @@
   "license": "ISC",
   "dependencies": {
     "@toplast/lastfm": "^0.1.5",
-    "@types/axios": "^0.14.0",
     "axios": "^0.26.1",
     "fs": "^0.0.1-security",
+    "rpi-led-matrix-painter": "^1.1.4",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/shelljs": "^0.8.11",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",

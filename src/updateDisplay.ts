@@ -1,18 +1,33 @@
-import * as shell from 'shelljs';
+import * as Board from 'rpi-led-matrix-painter';
+import { mv } from 'shelljs';
 
-export function updateDisplay(): boolean | void {
-  shell.mv('-f', 'images/cover_new.jpg', 'images/cover.jpg');
+export function updateDisplay(matrix: Board.Painter): boolean | void {
+  mv('-f', 'images/cover_new.jpg', 'images/cover.jpg');
 
-  shell.cd('vendor/RGBMatrixEmulator/samples/');
+  matrix.clear();
+  matrix.getCanvas().addCanvasSection(
+    new Board.CanvasSection(
+      'last-fm-image',
+      0,
+      0,
+      1,
+      32,
+      32,
+      [
+        {
+          id: 'image',
+          drawMode: Board.DrawMode.IMAGE,
+          points: { x: 0, y: 0, z: 1 },
+          color: 0x800000,
+          layer: 1,
+          imagePath: './images/cover.jpg',
+        },
+      ],
+      false
+    )
+  );
 
-  // TODO: Change this function to use the other package command...
-  const command = `python3 image-viewer.py ` + `../../../images/cover.jpg`;
-
-  console.log('trying to update display', command);
-
-  if (shell.exec(command).code !== 0) {
-    return;
-  }
+  matrix.paint();
 
   return true;
 }
